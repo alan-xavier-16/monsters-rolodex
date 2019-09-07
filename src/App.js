@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CardList from "./components/CardList.component";
 import "./App.css";
 
 class App extends Component {
@@ -20,9 +21,11 @@ class App extends Component {
     const { monsters } = this.state;
     return (
       <div className="App">
-        {monsters.map((monster, idx) => (
-          <h1 key={monster.id}>{monster.name}</h1>
-        ))}
+        <CardList>
+          {monsters.map(monster => (
+            <h1 key={monster.id}>{monster.name}</h1>
+          ))}
+        </CardList>
       </div>
     );
   }
